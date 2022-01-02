@@ -1,0 +1,118 @@
+@font-face {
+  font-family: main-font;
+  src: url("../fonts/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: main-bold-font;
+  src: url("../fonts/Raleway-Bold.ttf");
+}
+@font-face {
+  font-family: main-description-font;
+  src: url("../fonts/Source_Code_Pro/SourceCodePro-Regular.ttf");
+}
+* {
+  font-family: main-font, sans-serif;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+  font-family: main-bold-font, sans-serif;
+}
+
+p {
+  margin-bottom: 0;
+  margin-left: 20px;
+  font-family: main-description-font, sans-serif;
+  line-height: 50px;
+}
+
+.spans {
+  opacity: 1;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.images {
+  opacity: 0.7;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  cursor: url("../cursors/osu-2/1st.cur"), default;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image-section-1-text, .image-section-3-text,
+.image-section-2-text, .image-section-4-text {
+  text-align: center;
+  font-size: 35px;
+  position: absolute;
+  top: 50%;
+  left: 41.6%;
+  width: 320px;
+  transition: background-color 1s ease-in 0s, border-bottom-width 0.5s ease-in 0s, border-bottom-style 1s ease-in 0s, border-bottom-color 0.7s ease-in-out 0s, border-radius 0.5s cubic-bezier(0.21, 0.93, 0.6, 1.54) 0s;
+  border-color: #d5ac20;
+  border-radius: 7px;
+  border-width: 0;
+  cursor: url("../cursors/osu-2/2nd.cur"), default;
+}
+
+.main-image, .image-section-1 {
+  height: 100vh;
+  background-image: url("../images/main_image.jpg");
+}
+
+.image-section-1-text-span, .image-section-2-text-span {
+  transition: font-size 0.7s ease-out 0s, color 0.7s ease 0s;
+}
+
+.image-section-3-text-span, .image-section-4-text-span {
+  color: #e5c8c2;
+  transition: font-size 0.7s ease-out 0s, color 0.7s ease 0s;
+}
+
+.image-section-2 {
+  height: 500px;
+  background-image: url("../images/second_image.jpg");
+}
+
+.image-section-3 {
+  height: 500px;
+  background-image: url("../images/afrooz_failure_3.jpg");
+}
+
+.image-section-4 {
+  height: 650px;
+  background-image: url("../images/last_image_2.jpg");
+}
+
+.image-section-4-text:hover, .image-section-3-text:hover,
+.image-section-2-text:hover, .image-section-1-text:hover {
+  background-color: #2a2a2a;
+  border-bottom: 7px solid #e72a2a;
+  border-radius: 15px;
+}
+
+.image-section-4-text-span:hover, .image-section-3-text-span:hover,
+.image-section-2-text-span:hover, .image-section-1-text-span:hover {
+  color: #1183CCFF;
+  font-size: 44px;
+}
+
+.description-section {
+  margin: 0;
+  background-color: #C4CBCEFF;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+/*# sourceMappingURL=main.css.map */
