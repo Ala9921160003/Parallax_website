@@ -1,8 +1,6 @@
-$blue-color: #1183CCFF;
-$white-color: #e5c8c2;
-$description-section-color: #C4CBCEFF;
-$red-color: #e72a2a;
-$yellow-color: #d5ac20;
+$span-transition : font-size 0.7s ease-out 0s, color 0.7s ease 0s;
+$colors: (cBlue : #1183CCFF, cWhite : #e5c8c2, cDescription-section: #C4CBCEFF,
+          cRed : #e72a2a, cYellow : #d5ac20, cBlack : #1f1e1e);
 @font-face {
   font-family: main-font;
   src: url("../fonts/Raleway-Regular.ttf");
@@ -15,12 +13,28 @@ $yellow-color: #d5ac20;
   font-family: main-description-font;
   src: url("../fonts/Source_Code_Pro/SourceCodePro-Regular.ttf");
 }
+
 * {
   font-family: main-font, sans-serif;
 }
+
+/*
+* Below pseudo selector helps us to design the color
+* of a selected text.
+ */
+::selection {
+  color: lighten(map-get($colors, cBlue), 25%);
+  background: lighten(map-get($colors, cBlack), 15%);
+}
+
 html, body {
   padding: 0; margin: 0;
 }
+
+/*
+* all of h2s are topics of sections so we want them to
+* stay in the middle top.
+ */
 h2 {
   margin-top: 0;
   text-align: center;
@@ -32,12 +46,44 @@ p {
     left: 20px;
   }
   font-family: main-description-font, sans-serif;
-  line-height: 50px;
+  line-height: 70px;
 }
+section.description-section {
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 30px;
+  font-size: 1.7em;
+  letter-spacing: 5px;
+  padding: {
+    top: 20px;
+  }
+  text-indent: 35px;
+  cursor: url("../cursors/osu-2/3rd.cur"), default;
+}
+section.light-section {
+  background: {
+    color: map-get($colors, cDescription-section);
+  }
+}
+section.dark-section{
+  color: map-get($colors, cDescription-section);
+  background:{
+    color: map-get($colors, cBlack);
+  }
+}
+
 .spans {
   opacity: 1;
   font-size: 40px;
-  line-height: 50px; }
+  line-height: 50px;
+}
+
+/* Below class is here to help us set the pictures
+ * in the 'Parallax' way.
+ * it does that by 'background-attachment : fixed'
+ * it has to be relative because text divs are
+ * absolute.
+ */
 .images {
   opacity: 0.7;
   width: 100%;
@@ -64,7 +110,7 @@ p {
   border-bottom-style 1s ease-in 0s, border-bottom-color 0.7s ease-in-out 0s,
   border-radius 0.5s cubic-bezier(0.21, 0.93, 0.6, 1.54) 0s;
   border: {
-    color: $yellow-color;
+    color: map-get($colors, cYellow);
     radius: 7px;
     width: 0;
   }
@@ -75,11 +121,11 @@ p {
   background-image: url("../images/main_image.jpg");
 }
 .image-section-1-text-span, .image-section-2-text-span {
-  transition: font-size 0.7s ease-out 0s, color 0.7s ease 0s;
+  transition: $span-transition;
 }
 .image-section-3-text-span, .image-section-4-text-span {
-  color: $white-color;
-  transition: font-size 0.7s ease-out 0s, color 0.7s ease 0s;
+  color: map-get($colors, cWhite);
+  transition: $span-transition;
 }
 .image-section-2 {
   height: 500px;
@@ -97,38 +143,13 @@ p {
 .image-section-2-text:hover, .image-section-1-text:hover {
   background-color: rgb(42, 42, 42);
   border:{
-    bottom: 7px solid $red-color;
+    bottom: 7px solid map-get($colors, cRed);;
     radius: 15px;
   }
 }
 .image-section-4-text-span:hover, .image-section-3-text-span:hover,
 .image-section-2-text-span:hover, .image-section-1-text-span:hover {
-  color: $blue-color;
+  color: map-get($colors, cBlue);;
   font-size: 44px;
 }
-//.image-section-4-text::after, .image-section-3-text::after,
-//.image-section-2-text::after, .image-section-1-text::after {
-//  content: "";
-//  display: block;
-//  bottom: 0;
-//  margin: {
-//    top: 2px;
-//  }
-//  transition: border-top-width 0.5s ease-in 0s, border-top-style 1s ease-in 0s,
-//  border-top-color 0.7s ease-in-out 0s, border-radius 0.5s cubic-bezier(0.21, 0.93, 0.6, 1.54) 0s;
-//  border-color: beige;
-//}
 
-//.image-section-4-text:hover::after, .image-section-3-text:hover::after,
-//.image-section-2-text:hover::after, .image-section-1-text:hover::after {
-//  border:{
-//    top: 5px solid $blue-color;
-//    radius: 15px;
-//  }
-//}
-.description-section {
-  margin: 0;
-  background-color: $description-section-color;
-  overflow: hidden;
-  padding-bottom: 30px;
-}

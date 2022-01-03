@@ -14,11 +14,24 @@
   font-family: main-font, sans-serif;
 }
 
+/*
+* Below pseudo selector helps us to design the color
+* of a selected text.
+ */
+::selection {
+  color: #6abdf3;
+  background: #464444;
+}
+
 html, body {
   padding: 0;
   margin: 0;
 }
 
+/*
+* all of h2s are topics of sections so we want them to
+* stay in the middle top.
+ */
 h2 {
   margin-top: 0;
   text-align: center;
@@ -29,7 +42,27 @@ p {
   margin-bottom: 0;
   margin-left: 20px;
   font-family: main-description-font, sans-serif;
-  line-height: 50px;
+  line-height: 70px;
+}
+
+section.description-section {
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 30px;
+  font-size: 1.7em;
+  letter-spacing: 5px;
+  padding-top: 20px;
+  text-indent: 35px;
+  cursor: url("../cursors/osu-2/3rd.cur"), default;
+}
+
+section.light-section {
+  background-color: #C4CBCEFF;
+}
+
+section.dark-section {
+  color: #C4CBCEFF;
+  background-color: #1f1e1e;
 }
 
 .spans {
@@ -38,6 +71,12 @@ p {
   line-height: 50px;
 }
 
+/* Below class is here to help us set the pictures
+ * in the 'Parallax' way.
+ * it does that by 'background-attachment : fixed'
+ * it has to be relative because text divs are
+ * absolute.
+ */
 .images {
   opacity: 0.7;
   width: 100%;
@@ -106,13 +145,6 @@ p {
 .image-section-2-text-span:hover, .image-section-1-text-span:hover {
   color: #1183CCFF;
   font-size: 44px;
-}
-
-.description-section {
-  margin: 0;
-  background-color: #C4CBCEFF;
-  overflow: hidden;
-  padding-bottom: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
