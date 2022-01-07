@@ -15,8 +15,8 @@
 }
 
 /*
-* Below pseudo selector helps us to design the color
-* of a selected text.
+ * Below pseudo selector helps us to design the color
+ * of a selected text.
  */
 ::selection {
   color: #6abdf3;
